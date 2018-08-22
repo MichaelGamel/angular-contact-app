@@ -1,0 +1,12 @@
+/* Global Spaces Variables */
+$header-served-space: toRem(75);
+
+/* For Content Containers */
+.xs-vertical-margin{
+    @include media-breakpoint-down(xs){
+        margin-top: toRem(20);
+        margin-bottom: toRem(20);
+        display: block;
+        position: relative;
+    }
+}

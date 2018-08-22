@@ -1,0 +1,52 @@
+<h2 class="title">
+  {{'contact-app' | translate }}
+</h2>
+
+<div class="actions">
+  <form [formGroup]="form">
+    <app-textbox 
+      [id]="'txtFilter'" 
+      [name]="'txtFilter'" 
+      [tooltip]="'filter-tooltip' | translate"
+      [placeholder]="'filter-placeholder' | translate"
+      formControlName="filterKeywordField" 
+      (Keyup)="onKeyUp($event)"
+      ngDefaultControl>
+    </app-textbox>
+  </form>
+  <button class="btn btn-primary btn-sm" (click)="navigate()">{{ 'add-new-contact' | translate }}</button>
+</div>
+
+<div class="content">
+
+  <table class="table" *ngIf="(isDataExists | async)">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th (click)="sort(contactMetaData[0].propertyName)" class="clickable">{{'first-name' | translate }}</th>
+        <th (click)="sort(contactMetaData[1].propertyName)" class="clickable">{{ 'last-name' | translate }}</th>
+        <th>{{ 'phone' | translate }}</th>
+        <th (click)="sort(contactMetaData[2].propertyName)" class="clickable">{{ 'email' | translate }}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of (contacts | async); let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.email}}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="delete(contact.id)">{{ 'delete' | translate }}</button>
+          <button class="btn btn-info btn-sm" (click)="edit(contact.id)">{{ 'edit' | translate }}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="no-data" *ngIf="!(isDataExists | async)">
+    {{'no-data-found' | translate }}
+  </div>
+
+</div>

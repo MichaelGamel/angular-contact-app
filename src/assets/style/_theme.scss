@@ -1,0 +1,97 @@
+/* Theme Global Styles */
+
+header.main-header {
+    z-index: 100;
+    position: relative;
+}
+
+main.main-container {
+    margin: $header-served-space auto 0;
+    padding: toRem(30) 0;
+    @include media-breakpoint-down(md) {
+        margin: toRem(135) auto toRem(20);
+        padding: 0 toRem(15);
+    }
+    @include media-breakpoint-down(xs) {
+        margin: toRem(112) auto toRem(20);
+    }
+    &.noNavBar {
+        @include media-breakpoint-down(md) {
+            margin-top: toRem(100) !important;
+        }
+        @include media-breakpoint-down(xs) {
+            margin-top: toRem(65) !important;
+        }
+    }
+}
+
+
+/* Mid size container : width 632px */
+
+.mid-container {
+    width: 100%;
+    max-width: toRem(632);
+    background-color: $c-white;
+    &--bordered {
+        border: toRem(1) solid $c-lighten-gray;
+    }
+}
+
+
+/* Links */
+
+.clickable {
+    cursor: pointer !important;
+}
+
+
+/* Text */
+
+.blue-text {
+    color: rgba($c-main-color, 1);
+}
+
+.white-text {
+    color: $c-white;
+}
+
+.darkgray-text {
+    color: rgba($c-secondary-color, 1);
+}
+
+.gray-text {
+    color: rgba($c-prominent-color, 1);
+}
+
+.semibold-text {
+    font-weight: $f-semibold;
+}
+
+.lowercase-text {
+    text-transform: lowercase;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+
+.comma-before {
+    &:before {
+        content: ', ';
+    }
+}
+
+
+/* Backgrounds  */
+
+.bg-white {
+    background-color: $c-white;
+}
+
+.bg-lightgray {
+    background-color: rgba($c-prominent-color, 0.5);
+}

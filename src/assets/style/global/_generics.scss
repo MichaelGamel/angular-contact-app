@@ -1,0 +1,68 @@
+/*
+ * Margins & Paddings
+ */
+ @for $i from 0 through 6 {
+  //Margin
+ .mg-#{$i * 5} { margin: toRem(1 *($i * 5)) !important; }
+ .mg-t-#{$i * 5} { margin-top: toRem(1 *($i * 5)) !important; }
+ .mg-b-#{$i * 5} { margin-bottom: toRem(1 *($i * 5)) !important; }
+ .mg-l-#{$i * 5} { margin-left: toRem(1 *($i * 5)) !important; }
+ .mg-r-#{$i * 5} { margin-right: toRem(1 *($i * 5)) !important; }
+ 
+ //Padding
+ .pd-#{$i * 5} { padding: toRem(1 *($i * 5)) !important; }
+ .pd-t-#{$i * 5} { padding-top: toRem(1 *($i * 5)) !important; }
+ .pd-b-#{$i * 5} { padding-bottom: toRem(1 *($i * 5)) !important; }
+ .pd-l-#{$i * 5} { padding-left: toRem(1 *($i * 5)) !important; }
+ .pd-r-#{$i * 5} { padding-right: toRem(1 *($i * 5)) !important; }
+}
+
+/*
+* Auto Margins
+*/
+.mg-auto { margin: auto }
+.mg-t-auto { margin-top: auto }
+.mg-b-auto { margin-bottom: auto }
+.mg-r-auto { margin-right: auto }
+.mg-l-auto { margin-left: auto }
+
+/*
+* Position Classes
+*/
+.p-relative { position: relative !important; }
+.p-absolute { position: absolute !important; }
+.p-fixed { position: fixed !important; }
+.p-static { position: static !important; }
+
+/*
+* Overflow
+*/
+.o-hidden { overflow: hidden !important; }
+.o-visible { overflow: visible !important; }
+.o-auto { overflow: auto !important; }
+
+/*
+* Vertical Align
+*/
+.v-aligned{
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-orient: vertical;
+}
+
+
+/**
+* Fonts [ Size & Weight ]
+*/
+.f-light    { font-weight: $f-light !important; }
+.f-regular  { font-weight: $f-regular !important; }
+.f-medium   { font-weight: $f-medium !important; }
+.f-semibold { font-weight: $f-semibold !important; }
+.f-bold     { font-weight: $f-bold !important; }
+
+.f-xmini { font-size: $f-xmini !important ;}
+.f-mini { font-size: $f-mini !important ;}
+.f-xs { font-size: $f-xs !important ;}
+.f-sm { font-size: $f-sm !important ;}
+.f-md { font-size: $f-md !important ;}
+.f-lg { font-size: $f-lg !important ;}

@@ -1,0 +1,55 @@
+/**
+    Used in Companis List & Company Institutions List
+**/
+
+$content-card-padding: toRem(22) toRem(30) toRem(30); /* Content Card Padding */
+$content-card-padding-sm: toRem(20) toRem(20); /* Content Card Padding sm */
+$content-card-padding-xs: toRem(10); /* Content Card Padding xs */
+$heading-margin: toRem(20); /* Heading Horizontal Margin */
+
+.content-card{
+    padding: $content-card-padding;
+    background-color: $bg-gray;
+    @include media-breakpoint-down(sm){
+        padding: $content-card-padding-sm;
+    }
+    @include media-breakpoint-down(xs){
+        padding: 0;
+    }
+    &__header{
+        padding-bottom: toRem(20);
+        &:not(&--bordered){
+            @include media-breakpoint-down(sm){
+                padding: toRem(10) 0;
+            }
+        }
+        &--bordered {
+            border-bottom: toRem(1) solid $c-lighten-gray;
+        }
+        .back-button{
+            margin-right: toRem(10);
+            background: $c-white;
+        }
+    }
+    
+    &__heading{
+        font-size: $f-sm;
+        color: rgba($c-secondary-color, 1);
+        margin: 0;
+        &--space{
+            margin:0 $heading-margin;
+            @include media-breakpoint-down(xs){
+                margin: 0;
+            }
+        }
+    }
+
+    /* Listing Card */
+    &--list{
+        padding:0;
+        background-color: $c-white;
+    }
+    &--list &__heading{
+        margin:0;
+    }
+}

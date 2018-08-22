@@ -1,0 +1,20 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: toRem($radius) !important;
+    -moz-border-radius: toRem($radius) !important;
+    border-radius: toRem($radius) !important;
+}
+ 
+@mixin rounded( $topleft, $topright, $bottomright, $bottomleft) {
+    border-top-left-radius: toRem($topleft);
+    border-top-right-radius: toRem($topright);
+    border-bottom-right-radius: toRem($bottomright);
+    border-bottom-left-radius: toRem($bottomleft);
+    -webkit-border-top-left-radius: toRem($topleft);
+    -webkit-border-top-right-radius: toRem($topright);
+    -webkit-border-bottom-right-radius: toRem($bottomright);
+    -webkit-border-bottom-left-radius: toRem($bottomleft);
+    -moz-border-radius-topleft: toRem($topleft);
+    -moz-border-radius-topright: toRem($topright);
+    -moz-border-radius-bottomright: toRem($bottomright);
+    -moz-border-radius-bottomleft: toRem($bottomleft);
+}

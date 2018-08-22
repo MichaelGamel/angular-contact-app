@@ -1,0 +1,33 @@
+
+<div class="textbox">
+
+<label *ngIf="label != ''" class="form-control-label label-text" for="{{id}}">{{label}} <span *ngIf="required">*</span></label>
+<input #textInput 
+      type="text"
+      id="{{id}}"
+      name="{{name}}"
+      class="form-control" 
+      placeholder="{{placeholder}}"
+      maxlength="{{maxLength}}"
+      [pattern]="patternValue"
+      [(ngModel)]="value"
+      (blur)="onBlur()"
+      [disabled]="disabled"
+      [required]="required" 
+      (keyup)="onKey($event)"
+      #variable="ngModel" 
+      autocomplete="off" />
+
+  <div 
+    class="form-control-feedback" 
+    *ngIf="!variable.valid && requiredErrorMessage && !value && this.validationMode === this.validationModeObj.onblur">
+    <p>{{requiredErrorMessage}}</p>
+  </div>
+
+ 
+  <div class="form-control-feedback" 
+    *ngIf="!variable.valid && patternErrorMessage && variable.value && this.validationMode === this.validationModeObj.onblur">
+    <p>{{patternErrorMessage}}</p>
+  </div>
+
+</div>

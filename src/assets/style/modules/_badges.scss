@@ -1,0 +1,17 @@
+/* Circle Number Badge */
+
+.circle-badge {
+    position: absolute;
+    min-width: toRem(25);
+    height: toRem(25);
+    padding: 0 toRem(5);
+    text-align: center;
+    line-height: 1;
+    font-size: toRem(10);
+    top: 0;
+    right: 0;
+    @include border-radius(12.5px);
+    border: toRem(3) solid transparent;
+    transform: translateX(50%) translateY(-20%);
+    @extend .v-aligned;
+}

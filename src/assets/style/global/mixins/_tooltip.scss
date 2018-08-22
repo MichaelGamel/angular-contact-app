@@ -1,0 +1,118 @@
+/* --- Arrow --- */
+
+@mixin arrow($width, $direction, $color) {
+    border-style: solid;
+    width: 0;
+    height: 0;
+    border-width: $width / 2 + 1;
+    @if $direction==up {
+        border-color: transparent transparent $color transparent;
+    }
+    @else if $direction==down {
+        border-color: $color transparent transparent transparent;
+    }
+    @else if $direction==left {
+        border-color: transparent $color transparent transparent;
+    }
+    @else if $direction==right {
+        border-color: transparent transparent transparent $color;
+    }
+}
+
+
+/* --- Tooltip --- */
+
+@mixin tooltip($position, $bg, $color, $font-size, $fixed: false) {
+    position: relative;
+    &:hover>.tooltip {
+        display: inline-block;
+        opacity: 1;
+    }
+    & .tooltip:hover {
+        display: none;
+        opacity: 0;
+    }
+    & .tooltip {
+        background: $bg;
+        display: none;
+        margin: 0;
+        position: absolute;
+        color: $color;
+        font-size: $font-size;
+        text-align: center;
+        text-decoration: none;
+        line-height: $font-size;
+        padding: 10px;
+        white-space: nowrap;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        z-index: 10000;
+        @if $position==top {
+            bottom: 100%;
+            margin-bottom: 10px;
+            left: 0;
+        }
+        @else if $position==bottom {
+            top: 100%;
+            margin-top: 10px;
+            right: 0;
+        }
+        @else if $position==left {
+            right: 100%;
+            top: 50%;
+            margin-right: 10px;
+            margin-top: -12px;
+        }
+        @else if $position==right {
+            left: 100%;
+            top: 50%;
+            margin-left: 10px;
+            margin-top: -12px;
+        }
+        &:before {
+            content: " ";
+            position: absolute;
+            @if $position==top {
+                bottom: -11px;
+                @if $fixed==left {
+                    left: 10px;
+                }
+                @else if $fixed==right {
+                    right: 10px;
+                }
+                @else {
+                    left: 50%;
+                    margin-left: -6px;
+                }
+                @include arrow(10px, down, $bg);
+            }
+            @else if $position==bottom {
+                top: -11px;
+                @if $fixed==left {
+                    left: 10px;
+                }
+                @else if $fixed==right {
+                    right: 10px;
+                }
+                @else {
+                    left: 50%;
+                    margin-left: -6px;
+                }
+                @include arrow(10px, up, $bg);
+            }
+            @else if $position==left {
+                top: 50%;
+                right: -11px;
+                margin-top: -6px;
+                @include arrow(10px, right, $bg);
+            }
+            @else if $position==right {
+                top: 50%;
+                left: -11px;
+                margin-top: -6px;
+                @include arrow(10px, left, $bg);
+            }
+        }
+    }
+}

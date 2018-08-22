@@ -1,0 +1,19 @@
+{
+    "contact-app": "Contacts App",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "add-new-contact": "Add New Contact",
+    "edit-contact": "Edit Contact",
+    "delete": "Delete",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "phone": "Phone",
+    "email": "Email",
+    "save": "save",
+    "no-data-found": "There's no contacts yet.",
+    "page-not-found": "404 Page Not Found",
+    "require-message": "this field is required",
+    "invalid-email" : "Invalid E-mail",
+    "filter-placeholder": "Filter",
+    "filter-tooltip": "Filter by First Name or Last Name"
+}

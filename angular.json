@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Humanitec": {
+    "angular-contact-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Humanitec",
+            "outputPath": "dist/angular-contact-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,8 +27,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/style/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/style"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -48,24 +53,46 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "testing": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.testing.ts"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Humanitec:build"
+            "browserTarget": "angular-contact-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Humanitec:build:production"
+              "browserTarget": "angular-contact-app:build:production"
+            },
+            "staging": {
+              "browserTarget": "angular-contact-app:build:staging"
+            },
+            "testing": {
+              "browserTarget": "angular-contact-app:build:testing"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Humanitec:build"
+            "browserTarget": "angular-contact-app:build"
           }
         },
         "test": {
@@ -76,8 +103,13 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/assets/style/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/style"
+              ]
+            },
             "scripts": [],
             "assets": [
               "src/favicon.ico",
@@ -99,7 +131,7 @@
         }
       }
     },
-    "Humanitec-e2e": {
+    "angular-contact-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -107,11 +139,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Humanitec:serve"
+            "devServerTarget": "angular-contact-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Humanitec:serve:production"
+              "devServerTarget": "angular-contact-app:serve:production"
             }
           }
         },
@@ -127,5 +159,5 @@
       }
     }
   },
-  "defaultProject": "Humanitec"
+  "defaultProject": "angular-contact-app"
 }

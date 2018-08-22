@@ -1,0 +1,21 @@
+/* Base styles */
+input{
+    font-family: $font-family-base;
+}
+
+/* Hide default browser input icons */
+input::-webkit-textfield-decoration-container,
+input::-webkit-caps-lock-indicator,
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-contacts-auto-fill-button,
+input::-ms-clear,
+input::-ms-reveal {
+    visibility: hidden !important;
+    display: none !important;
+    pointer-events: none !important;
+    position: absolute;
+    right: 0;
+    height: 0;
+    width: 0;
+    margin: 0;
+}

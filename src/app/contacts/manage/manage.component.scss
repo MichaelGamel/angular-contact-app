@@ -1,0 +1,21 @@
+@import "common.scss";
+.content{
+    @include box-shadow(0, 2, 4, 0, rgba($c-black, 0.2));
+    padding: toRem(15);
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        .action{
+            margin-right: toRem(5);
+        }
+    }
+}
+
+.title {
+    text-align: center
+}
+
+.btn-save:disabled{
+    cursor: not-allowed !important;
+}

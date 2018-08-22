@@ -1,0 +1,5 @@
+@import "common.scss";
+
+.title{
+    @include absolutecenter(both);
+}

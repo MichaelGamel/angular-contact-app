@@ -1,0 +1,59 @@
+<h2 class="title">
+    {{ pageTitle }}
+</h2>
+
+<div class="content">
+
+    <form [formGroup]="form">
+
+        <app-textbox 
+            [id]="'txtFirstName'" 
+            [name]="'txtFirstName'" 
+            [label]="'First Name'" 
+            [required]="true" 
+            [requiredErrorMessage]="'require-message' | translate"
+            [maxLength]="25" 
+            formControlName="firstNameField" 
+            ngDefaultControl>
+        </app-textbox>
+
+        <app-textbox 
+            [id]="'txtLastName'" 
+            [name]="'txtLastName'" 
+            [label]="'Last Name'" 
+            [required]="true" 
+            [requiredErrorMessage]="'require-message' | translate"
+            [maxLength]="25" 
+            formControlName="lastNameField" 
+            ngDefaultControl>
+        </app-textbox>
+
+        <app-textbox 
+            [id]="'txtPhone'" 
+            [name]="'txtPhone'" 
+            [label]="'Phone'" 
+            [required]="true" 
+            [requiredErrorMessage]="'require-message' | translate"
+            [maxLength]="15" 
+            formControlName="phoneField" 
+            ngDefaultControl>
+        </app-textbox>
+
+        <app-textbox 
+            [id]="'txtEmail'" 
+            [name]="'txtEmail'" 
+            [label]="'Email'" 
+            [patternKey]="'email'" 
+            [patternErrorMessage]="'invalid-email' | translate"
+            [maxLength]="50" 
+            formControlName="emailField" 
+            ngDefaultControl>
+        </app-textbox>
+
+        <div class="content__actions">
+            <button type="button" class="btn btn-default btn-sm action"  (click)="cancel()">{{ 'cancel' | translate }}</button>
+            <button type="button" class="btn btn-primary btn-sm action btn-save" [disabled]="!form.valid" (click)="save(form.value)">{{ 'save' | translate }}</button>
+        </div>
+
+    </form>
+</div>

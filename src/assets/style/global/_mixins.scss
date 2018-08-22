@@ -1,0 +1,14 @@
+/* Bootstrap Mixins */
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+/** custom mixins*/
+
+@import "mixins/z-depth";
+@import "mixins/rounded";
+@import "mixins/shadow";
+@import "mixins/truncate";
+@import "mixins/positioning";
+@import "mixins/tooltip";

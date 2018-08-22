@@ -1,0 +1,31 @@
+/* Global Settings */
+@import "global/colors";
+@import "global/mixins";
+@import "global/functions";
+@import "global/spacing";
+@import "global/fonts";
+@import "global/typography";
+@import "global/generics";
+
+/* Override Bootstrap Settings */
+@import "overrides/bootstrap-settings";
+
+/* Vendors */
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap-grid';
+
+/* Base */
+@import "base";
+@import "theme";
+
+/* Style Overrides */
+@import "overrides/bootstrap-ui";
+
+/* Modules */
+@import "modules/content-card";
+@import "modules/badges";
+@import "modules/buttons";
+@import "modules/forms";
+@import "modules/_tooltip";
+@import "modules/_spinner";
+

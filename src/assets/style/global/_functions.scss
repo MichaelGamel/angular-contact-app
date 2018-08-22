@@ -1,0 +1,5 @@
+/* Convert px to rem */
+@function toRem($fsize){
+    $remSize : $fsize / 16;
+    @return #{$remSize}rem;
+}

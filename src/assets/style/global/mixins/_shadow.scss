@@ -1,0 +1,5 @@
+@mixin box-shadow($hOffset, $vOffset, $blur, $spread, $color, $style: null) {
+    -webkit-box-shadow: toRem($hOffset) toRem($vOffset) toRem($blur) toRem($spread) $color $style;
+    -moz-box-shadow: toRem($hOffset) toRem($vOffset) toRem($blur) toRem($spread) $color $style;
+    box-shadow: toRem($hOffset) toRem($vOffset) toRem($blur) toRem($spread) $color $style;
+}

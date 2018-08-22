@@ -1,0 +1,43 @@
+$option-btn-size: toRem(35); /* Options Squared Button Size */
+
+/* Options Squared Button (ex: in Companies list item) [ Icon Only ] */
+.options-btn{
+    background-color: $bg-gray;
+    border: toRem(1) solid $c-lighten-gray;
+    color : rgba($c-prominent-color, 1);
+    width : $option-btn-size;
+    height : $option-btn-size;
+    padding:0;
+    font-size: 0;
+    cursor: pointer;
+    /* Override default focus style */
+    &:focus{
+        box-shadow: none;
+    }
+    .options-btn__icon{
+        font-size: $f-sm;
+    }
+}
+
+/* Icon Button [ Icon & Text ] */
+.icon-btn{
+    $icon : &+'__icon';
+
+    font-size: $f-sm;
+    font-weight: $f-semibold;
+    line-height: 1rem;
+    #{$icon}{
+        font-size: $f-sm;
+        opacity: 0.5;
+        width: 1rem;
+        height: 1rem;
+    }
+    &--gray{
+        background-color: $bg-gray;
+        border:toRem(1) solid $c-lighten-gray;
+        color: rgba($c-prominent-color, 1);
+        #{$icon}{
+            color: rgba($c-prominent-color, 1);
+        }
+    }
+}

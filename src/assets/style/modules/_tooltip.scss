@@ -1,0 +1,9 @@
+.info-icon{
+    padding: toRem(1) toRem(5) toRem(1) toRem(5);
+    font-size: toRem(11);
+    vertical-align: super;
+    margin-left: toRem(5);
+    @include border-radius(2);
+    background-color: $c-lighten-gray;
+    cursor: pointer;
+}

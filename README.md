@@ -1,27 +1,48 @@
-# Humanitec
+# Angular Contact App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites to run the application
 
-## Code scaffolding
+1. Node versaion 8 or higher 
+2. Install Angular CLI by run this command `npm i -g @angular/cli@latest` on terminal
+3. Open the project folder using terminal
+4. Install the dependencies by run this command `npm i`
+5. Run the project by run this command `ng serve -o`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+# Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Support multiple environments
+2. CRUD operations.
+3. Filtring (First Name, Last Name)
+4. Sorting (First Name, Last Name, Email) -note- it work by click on column header
+5. Ability to support multiple languages
+6. Save contacts data in local storage using my npm package:
+ https://www.npmjs.com/package/@michael-gamel/local-storage-manager
 
-## Running unit tests
+# Environments
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Development
+ 
+ - to run in development environment `ng serve`
+ - local storage prefix key --> **[development]task-**
 
-## Running end-to-end tests
+## Testing
+ 
+ - to run in testing environment `ng serve -c=testing`
+ - local storage prefix key --> **[testing]task-**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Staging
+ 
+ - to run in staging environment `ng serve -c=staging`
+ - local storage prefix key --> **[staging]task-**
 
-## Further help
+## Production
+ 
+ - to run in production environment `ng serve -c=prod`
+ - local storage prefix key --> **task-**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+ 

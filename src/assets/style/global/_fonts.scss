@@ -1,0 +1,14 @@
+/* Main font [300, 400, 500, 600, 700] */
+$fonts: ('300': 'light','400': 'regular','500': 'medium','600': 'semibold','700': 'bold');
+@each $w, $name in $fonts {
+    @font-face {
+        font-family: 'proxima-nova';
+        font-style: normal;
+        font-weight: #{$w};
+        src: url(../fonts/proxima-nova/proxima-nova-#{$name}.eot);
+        src: url(../fonts/proxima-nova/proxima-nova-#{$name}.eot?#iefix) format('embedded-opentype'),
+        url(../fonts/proxima-nova/proxima-nova-#{$name}.woff2) format('woff2'),
+        url(../fonts/proxima-nova/proxima-nova-#{$name}.woff) format('woff'),
+        url(../fonts/proxima-nova/proxima-nova-#{$name}.ttf) format('truetype');
+    }
+}  

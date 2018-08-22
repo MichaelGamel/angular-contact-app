@@ -1,0 +1,61 @@
+@import "common.scss";
+.content {
+    @include box-shadow(0, 2, 4, 0, rgba($c-black, 0.2));
+    // min-height: toRem(300);
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: toRem(16);
+        background-color: transparent;
+        border-collapse: collapse;
+        margin-top: toRem(20);
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        td {
+            padding: toRem(12);
+            vertical-align: top;
+            border-top: toRem(1) solid #dee2e6;
+            font-size: $f-xs;
+            font-weight: $f-regular;
+        }
+        thead {
+            th {
+                vertical-align: bottom;
+                border-bottom: toRem(2) solid #dee2e6;
+                padding: toRem(12);
+                vertical-align: top;
+                border-top: 0;
+                color: #a1a2a2;
+                text-transform: uppercase;
+                font-size: $f-mini;
+                font-weight: $f-regular;
+            }
+        }
+        button {
+            margin-right: toRem(5);
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    /deep/ .textbox {
+        margin-bottom: 0;
+    }
+}
+
+.title {
+    text-align: center
+}
+
+.no-data{
+    @include absolutecenter(both);
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+}
